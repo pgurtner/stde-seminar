@@ -10,3 +10,5 @@ pydantic
 shortuuid
 tqdm
 wandb
+folx
+psutil
