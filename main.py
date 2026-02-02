@@ -106,7 +106,8 @@ def main(_: Any) -> None:
     f.write(f"\n n_runs: {FLAGS.n_runs}\n")
     f.write("\n---------------CONFIG---------------\n")
     if hasattr(cfg.eqn_cfg, "coeffs"):
-      del cfg.eqn_cfg.coeffs
+      with cfg.unlocked():
+        del cfg.eqn_cfg.coeffs
     f.write(str(cfg))
 
   with (result_path / result_file_name).with_suffix(".pkl").open("wb") as f:
