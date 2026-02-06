@@ -12,3 +12,4 @@ tqdm
 wandb
 folx
 psutil
+numpy
