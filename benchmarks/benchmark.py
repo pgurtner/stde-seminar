@@ -125,4 +125,4 @@ def benchmark_no_mem():
                 f.write(f"Mean mem {mean_mem / 2 ** 20:.3f} MB\n")
 
 
-benchmark_with_mem()
+benchmark_no_mem()
