@@ -1,24 +1,35 @@
 # Seminar contribution
+
 setup
+
 ```shell
 # setup venv...
 
 pip install .
 ```
+
 ## Benchmarks with standalone differential operators
+
 ```shell
 python3 benchmarks/pure_standalone_operators_benchmarks.py
 ```
-The file contains some other options for input parameters. The ones used in the seminar report are included in the function call `benchmark_batch_size(dim, trigonometric_function, random_x, 300)`
+
+The file contains some other options for input parameters. The ones used in the seminar report are included in the
+function call `benchmark_batch_size(dim, trigonometric_function, random_x, 300)`
 
 ## Benchmarks with PINNs
+
 Run benchmarks:
 
 ```shell
 python benchmarks/benchmark.py
 ```
 
-Memory measurements are done via  `memory_full_info().uss` and `ps_process.memory_info().rss` from `psutil`, so your OS has to support this (psutil says
+This runs all benchmarks without memory measurements, then with rss measurements and then with uss measurements. Maybe
+you want to skip some of them.
+
+Memory measurements are done via  `memory_full_info().uss` and `ps_process.memory_info().rss` from `psutil`, so your OS
+has to support this (psutil says
 this is the case for Linux, macOS and Windows).
 
 Extract measurements and create plots:
